@@ -30,11 +30,35 @@ export const createProperty = (data) => {
   return (dispatch) => {
     postProperty(data)
       .then((res) => {
-        console.log(res.data, 'created property')
         dispatch(fetchProperties())
       })
       .catch((error) => {
 
       });
+  }
+}
+
+export const sortingPropertis = (params) => {
+  const {
+    value,
+    type
+  } = params;
+  return(dispatch, getState) => {
+    const propertis = getState().properties.list;
+    let _properties = [...propertis];
+
+    if(type === 'desc') {
+      _properties = _properties.sort((a,b) => {
+        return a[value] === b[value] ? 0 : a[value] < b[value] ? -1 : 1
+      })
+    }
+
+    if(type === 'asc') {
+      _properties = _properties.sort((a,b) => {
+        return a[value] === b[value] ? 0 : a[value] > b[value] ? -1 : 1
+      })
+    }
+
+    dispatch({ type: SET_PROPERTIES, list: _properties })
   }
 }

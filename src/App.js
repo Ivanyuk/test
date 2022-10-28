@@ -23,7 +23,8 @@ function App() {
         </AppBar>
         <Box
           component="nav"
-          sx={{ p: '28px 15px', width: { sm: "42px" }, flexShrink: { sm: 0 }, height: '100vh', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.4)'}}
+          position="fixed"
+          sx={{ p: '28px 15px', width:  "42px", flexShrink: { sm: 0 }, height: '100vh', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.4)'}}
         >
           <img
             src={Logo}
@@ -32,7 +33,7 @@ function App() {
         </Box>
         <Box
           component="main"
-          sx={{ pt: '68px', width: { sm: `calc(100% - ${drawerWidth}px)` }, background: '#FAFAFA' }}
+          sx={{ pt: '68px', ml: '72px', width: { sm: '100%' }, width: `calc(100% - ${drawerWidth}px)`, background: '#FAFAFA' , overflowX: 'auto'}}
         >
           <Properties/>
         </Box>

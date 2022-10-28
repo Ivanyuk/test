@@ -7,7 +7,7 @@ export default function PropertiesList() {
 
   return (
     <Box
-      sx={{ display: 'flex', flexWrap: 'wrap', marginLeft: '20px' }}
+      sx={{ display: 'flex', flexWrap: 'wrap', margin: '0 0 20px 40px' }}
     >
       {properties.map(property => (
         <PropertyItem key={property.id} property={property}/>

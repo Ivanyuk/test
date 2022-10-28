@@ -124,6 +124,14 @@ const theme = createTheme({
           maxHeight: '36px'
         }
       }
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          border: 'none',
+          minWidth: '130px'
+        }
+      }
     }
   }
 });
